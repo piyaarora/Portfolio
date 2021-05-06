@@ -5,12 +5,6 @@
   font-weight: normal;
   font-style: normal; }
 
-/* =======================================================
-*
-* 	Template Style 
-*	Edit this section
-*
-* ======================================================= */
 body {
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: 400;
@@ -104,9 +98,11 @@ figure {
     border-radius: 50%; }
   #main-aside .position {
     display: block;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-size: 12px;
-    text-transform: uppercase; }
+    color:#66676b;
+    text-transform: uppercase; 
+  }
   #main-aside #main-logo {
     text-align: right;
     font-weight: 700;
@@ -333,12 +329,12 @@ figure {
           border: none;
           font-weight: 400; }
           #home-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
-            color: #000;
-            border: 1px solid #000;
+            color: #fff;
+            border: 1px solid #e6e6e6;
             background: transparent !important; }
             #home-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:hover {
               background: transparent !important;
-              border: 1px solid #000 !important; }
+              border: 1px solid #b3b3b3 !important; }
           @media screen and (max-width: 768px) {
             #home-hero .flexslider .slider-text > .slider-text-inner .btn {
               width: 100%; } }
@@ -736,10 +732,13 @@ body.offcanvas {
 
 .progress {
   height: 6px;
+  width:50px;
+  opacity: .6;
   -webkit-box-shadow: none;
   box-shadow: none;
   background: #f2f3f7;
-  overflow: visible; }
+  /* overflow: visible; */
+ }
 
 .progress-bar {
   background: #2c98f0;
@@ -829,6 +828,14 @@ body.offcanvas {
           /* color: #b240a8; } */
     
 
+          .highlight{
+              color: #333;
+              font-size: 18px;
+              font-weight: 700;
+              background: #f2f3f7;
+              padding-left:1px ;
+              margin-top:20px ;
+          }
 .features {
   text-align: left;
   width: 100%;
