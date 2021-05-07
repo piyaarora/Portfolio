@@ -35,26 +35,26 @@
 	};
 
 
-	var counter = function () {
-		$('.js-counter').countTo({
-			formatter: function (value, options) {
-				return value.toFixed(options.decimals);
-			},
-		});
-	};
+	// var counter = function () {
+	// 	$('.js-counter').countTo({
+	// 		formatter: function (value, options) {
+	// 			return value.toFixed(options.decimals);
+	// 		},
+	// 	});
+	// };
 
 
-	var counterWayPoint = function () {
-		if ($('#counter-content').length > 0) {
-			$('#counter-content').waypoint(function (direction) {
+	// var counterWayPoint = function () {
+	// 	if ($('#counter-content').length > 0) {
+	// 		$('#counter-content').waypoint(function (direction) {
 
-				if (direction === 'down' && !$(this.element).hasClass('animated')) {
-					setTimeout(counter, 400);
-					$(this.element).addClass('animated');
-				}
-			}, { offset: '90%' });
-		}
-	};
+	// 			if (direction === 'down' && !$(this.element).hasClass('animated')) {
+	// 				setTimeout(counter, 400);
+	// 				$(this.element).addClass('animated');
+	// 			}
+	// 		}, { offset: '90%' });
+	// 	}
+	// };
 
 	// Animations
 	var contentWayPoint = function () {
@@ -287,8 +287,8 @@
 	// Document on load.
 	$(function () {
 		fullHeight();
-		counter();
-		counterWayPoint();
+		// counter();
+		// counterWayPoint();
 		contentWayPoint();
 		burgerMenu();
 
@@ -306,3 +306,39 @@
 
 
 }());
+
+const contact = document.querySelector("#contact-form");
+let username = document.querySelector("#username");
+let email = document.querySelector("#email");
+let subject = document.querySelector("#subject");
+let message = document.querySelector("#message");
+contact.addEventListener('submit', (e) => {
+	e.preventDefault()
+	console.log("hello")
+
+	let formdata = {
+		username: username.value,
+		email: email.value,
+		subject: subject.value,
+		message: message.value
+	}
+	console.log(formdata);
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', '/');
+	xhr.setRequestHeader('content-type', 'application/json');
+	xhr.onload = function () {
+		console.log(xhr.responseText);
+		if (xhr.responseText == 'success') {
+			alert('Details shared');
+			username.value = '';
+			email.value = '';
+			message.value = ''
+			subject.value = '';
+		} else {
+			alert("something went wrong")
+		}
+	}
+	xhr.send(JSON.stringify(formdata))
+
+})
+console.log("workinggg");
