@@ -109,8 +109,6 @@
 			}
 		});
 
-
-
 	};
 
 	// Click outside of offcanvass
@@ -200,11 +198,6 @@
 
 	};
 
-
-
-
-
-
 	var sliderMain = function () {
 
 		$('#home-hero .flexslider').flexslider({
@@ -254,10 +247,6 @@
 
 				$("#sticky_item").stick_in_parent();
 			}
-
-
-
-
 		});
 
 		$('.sticky-parent').css('height', h);
@@ -313,8 +302,9 @@ let email = document.querySelector("#email");
 let subject = document.querySelector("#subject");
 let message = document.querySelector("#message");
 contact.addEventListener('submit', (e) => {
-	e.preventDefault()
-	console.log("hello")
+
+	e.preventDefault();
+	// console.log("hello")
 
 	let formdata = {
 		username: username.value,
@@ -341,4 +331,4 @@ contact.addEventListener('submit', (e) => {
 	xhr.send(JSON.stringify(formdata))
 
 })
-console.log("workinggg");
+// console.log("workinggg");
