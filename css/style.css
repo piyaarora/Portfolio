@@ -870,7 +870,7 @@ ul.skills-list li {
 }
 
 .project-description {
-  transition: var(--transition);
+background: var(--bg-div);
   position: relative;
   z-index: 2;
   padding: 25px;
